@@ -61,10 +61,10 @@ var isOk bool
 每声明一个变量就需要写 `var` 关键字会比较繁琐，go语言中还支持批量变量声明：
 ```go
 var (
-a string
-b int
-c bool
-d float32
+    a string
+    b int
+    c bool
+    d float32
 )
 ```
 
@@ -102,15 +102,15 @@ var age = 18
 package main
 
 import (
-"fmt"
+    "fmt"
 )
 // 全局变量m
 var m = 100
 
 func main() {
-n := 10
-m := 200 // 此处声明局部变量m
-fmt.Println(m, n)
+    n := 10
+    m := 200 // 此处声明局部变量m
+    fmt.Println(m, n)
 }
 ```
 
@@ -119,13 +119,14 @@ fmt.Println(m, n)
 在使用多重赋值时，如果想要忽略某个值，可以使用匿名变量`（anonymous variable）`。 匿名变量用一个下划线`_`表示，例如：
 ```go
 func foo() (int, string) {
-return 10, "Q1mi"
+    return 10, "Q1mi"
 }
+
 func main() {
-x, _ := foo()
-_, y := foo()
-fmt.Println("x=", x)
-fmt.Println("y=", y)
+    x, _ := foo()
+    _, y := foo()
+    fmt.Println("x=", x)
+    fmt.Println("y=", y)
 }
 ```
 
@@ -156,9 +157,9 @@ e = 2.7182
 `const` 同时声明多个常量时，如果省略了值则表示和上面一行的值相同。 例如：
 ```go
 const (
-n1 = 100
-n2
-n3
+    n1 = 100
+    n2
+    n3
 )
 ```
 
@@ -172,10 +173,10 @@ n3
 举个例子：
 ```go
 const (
-n1 = iota //0
-n2        //1
-n3        //2
-n4        //3
+    n1 = iota //0
+    n2        //1
+    n3        //2
+    n4        //3
 )
 ```
 
@@ -185,10 +186,10 @@ n4        //3
 
 ```go
 const (
-n1 = iota //0
-n2        //1
-_
-n4        //3
+    n1 = iota //0
+    n2        //1
+    _
+    n4        //3
 )
 ```
 
@@ -196,31 +197,32 @@ n4        //3
 
 ```go
 const (
-n1 = iota //0
-n2 = 100  //100
-n3 = iota //2
-n4        //3
+    n1 = iota //0
+    n2 = 100  //100
+    n3 = iota //2
+    n4        //3
 )
+
 const n5 = iota //0
 ```
 定义数量级 （这里的 `<<` 表示左移操作，`1<<10` 表示将1的二进制表示向左移 10 位，也就是由 1 变成了 `10000000000` ，也就是十进制的 `1024` 。同理 `2<<2` 表示将2的二进制表示向左移2位，也就是由 `10` 变成了 `1000` ，也就是十进制的8。）
 
 ```go
 const (
-_  = iota
-KB = 1 << (10 * iota)
-MB = 1 << (10 * iota)
-GB = 1 << (10 * iota)
-TB = 1 << (10 * iota)
-PB = 1 << (10 * iota)
+    _  = iota
+    KB = 1 << (10 * iota)
+    MB = 1 << (10 * iota)
+    GB = 1 << (10 * iota)
+    TB = 1 << (10 * iota)
+    PB = 1 << (10 * iota)
 )
 ```
 
 **多个iota定义在一行**
 ```go
 const (
-a, b = iota + 1, iota + 2 //1,2
-c, d                      //2,3
-e, f                      //3,4
+    a, b = iota + 1, iota + 2 //1,2
+    c, d                      //2,3
+    e, f                      //3,4
 )
 ```

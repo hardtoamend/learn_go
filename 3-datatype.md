@@ -68,13 +68,15 @@ Go语言支持两种浮点型数：`float32` 和 `float64` 。这两种浮点型
 打印浮点数时，可以使用fmt包配合动词%f，代码如下：
 ```go
 package main
+
 import (
-"fmt"
-"math"
+    "fmt"
+    "math"
 )
+
 func main() {
-fmt.Printf("%f\n", math.Pi)
-fmt.Printf("%.2f\n", math.Pi)
+    fmt.Printf("%f\n", math.Pi)
+    fmt.Printf("%.2f\n", math.Pi)
 }
 ````
 
@@ -121,11 +123,13 @@ Go 语言的字符串常见转义符包含回车、换行、单双引号、制�
 举个例子，我们要打印一个 Windows 平台下的一个文件路径：
 ```go
 package main
+
 import (
-"fmt"
+    "fmt"
 )
+
 func main() {
-fmt.Println("str := \"c:\\Code\\learn\\go.exe\"")
+    fmt.Println("str := \"c:\\Code\\learn\\go.exe\"")
 }
 ```
 
@@ -136,6 +140,7 @@ s1 := `第一行
 第二行
 第三行
 `
+
 fmt.Println(s1)
 ```
 
@@ -168,15 +173,16 @@ Go 使用了特殊的 `rune` 类型来处理 `Unicode` ，让基于 `Unicode` �
 ```go
 // 遍历字符串
 func traversalString() {
-s := "hello你好"
-for i := 0; i < len(s); i++ { //byte
-fmt.Printf("%v(%c) ", s[i], s[i])
-}
-fmt.Println()
-for _, r := range s { //rune
-fmt.Printf("%v(%c) ", r, r)
-}
-fmt.Println()
+    s := "hello你好"
+    for i := 0; i < len(s); i++ { //byte
+        fmt.Printf("%v(%c) ", s[i], s[i])  
+    }
+    fmt.Println()
+	
+    for _, r := range s { //rune
+        fmt.Printf("%v(%c) ", r, r)
+    }
+    fmt.Println()
 }
 ```
 
@@ -188,16 +194,16 @@ fmt.Println()
 要修改字符串，需要先将其转换成 `[]rune` 或 `[]byte` ，完成后再转换为 `string` 。无论哪种转换，都会重新分配内存，并复制字节数组。
 ```go
 func changeString() {
-s1 := "big"
+    s1 := "big"
 // 强制类型转换
-byteS1 := []byte(s1)
-byteS1[0] = 'p'
-fmt.Println(string(byteS1))
-
-	s2 := "白萝卜"
-	runeS2 := []rune(s2)
-	runeS2[0] = '红'
-	fmt.Println(string(runeS2))
+    byteS1 := []byte(s1)
+    byteS1[0] = 'p'
+    fmt.Println(string(byteS1))
+	
+    s2 := "白萝卜"
+    runeS2 := []rune(s2)
+    runeS2[0] = '红'
+    fmt.Println(string(runeS2))
 }
 ```
 
@@ -214,11 +220,11 @@ T(表达式)
 比如计算直角三角形的斜边长时使用math包的Sqrt()函数，该函数接收的是float64类型的参数，而变量a和b都是int类型的，这个时候就需要将a和b强制类型转换为float64类型。
 ```go
 func sqrtDemo() {
-var a, b = 3, 4
-var c int
-// math.Sqrt()接收的参数是float64类型，需要强制转换
-c = int(math.Sqrt(float64(a*a + b*b)))
-fmt.Println(c)
+    var a, b = 3, 4
+    var c int
+    // math.Sqrt()接收的参数是float64类型，需要强制转换
+    c = int(math.Sqrt(float64(a*a + b*b)))
+    fmt.Println(c)
 }
 ```
 

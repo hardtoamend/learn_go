@@ -5,7 +5,7 @@ https://liwenzhou.com/posts/Go/install/
 
 ## 1. Go 安装
 
-[golnag_download](https://golang.org/dl/)
+[golang_download](https://golang.org/dl/)
 
 ```shell
 $ wget https://go.dev/dl/go1.20.1.linux-amd64.tar.gz

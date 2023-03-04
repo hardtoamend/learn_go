@@ -10,11 +10,11 @@ Go语言中if条件判断的格式如下：
 
 ```go
 if 表达式1 {
-分支1
-} else if 表达式2 {
-分支2
-} else{
-分支3
+        分支1
+    } else if 表达式2 {
+        分支2
+    } else{
+        分支3
 }
 ```
 当表达式 1 的结果为 `true` 时，执行分支 1 ，否则判断表达式 2 ，如果满足则执行分支 2 ，都不满足时，则执行分支 3 . if 判断中的 `else if` 和 `else` 都是可选的，可以根据实际需要进行选择。
@@ -24,14 +24,14 @@ Go语言规定与 `if` 匹配的左括号 `{` 必须与 `if` 和表达式放在�
 举个例子：
 ```go
 func ifDemo1() {
-score := 65
-if score >= 90 {
-fmt.Println("A")
-} else if score > 75 {
-fmt.Println("B")
-} else {
-fmt.Println("C")
-}
+    score := 65
+        if score >= 90 {
+    fmt.Println("A")
+    } else if score > 75 {
+        fmt.Println("B")
+    } else {    
+		fmt.Println("C")
+    }
 }
 ```
 
@@ -40,13 +40,13 @@ if条件判断还有一种特殊的写法，可以在 if 表达式之前添加�
 
 ```go
 func ifDemo2() {
-if score := 65; score >= 90 {
-fmt.Println("A")
-} else if score > 75 {
-fmt.Println("B")
-} else {
-fmt.Println("C")
-}
+    if score := 65; score >= 90 {
+        fmt.Println("A")
+    } else if score > 75 {
+        fmt.Println("B")
+    } else {
+        fmt.Println("C")
+    }
 }
 ```
 思考题： 上下两种写法的区别在哪里？
@@ -66,19 +66,19 @@ for 初始语句;条件表达式;结束语句{
 
 ```go
 func forDemo() {
-for i := 0; i < 10; i++ {
-fmt.Println(i)
-}
+    for i := 0; i < 10; i++ {
+        fmt.Println(i)
+    }
 }
 ```
 for 循环的初始语句可以被忽略，但是初始语句后的分号必须要写，例如：
 
 ```go
 func forDemo2() {
-i := 0
-for ; i < 10; i++ {
-fmt.Println(i)
-}
+    i := 0
+    for ; i < 10; i++ {
+        fmt.Println(i)
+    }
 }
 ```
 
@@ -86,11 +86,11 @@ for 循环的初始语句和结束语句都可以省略，例如：
 
 ```go
 func forDemo3() {
-i := 0
-for i < 10 {
-fmt.Println(i)
-i++
-}
+    i := 0
+    for i < 10 {
+        fmt.Println(i)
+        i++
+    }
 }
 ```
 这种写法类似于其他编程语言中的while，在while后添加一个条件表达式，满足条件表达式时持续循环，否则结束循环。
@@ -98,7 +98,7 @@ i++
 ### 2.1 无限循环
 ```go
 for {
-循环体语句
+    循环体语句
 }
 ```
 
@@ -115,21 +115,21 @@ Go语言中可以使用 `for range` 遍历数组、切片、字符串、map 及�
 使用 `switch` 语句可方便地对大量的值进行条件判断。
 ```go
 func switchDemo1() {
-finger := 3
-switch finger {
-case 1:
-fmt.Println("大拇指")
-case 2:
-fmt.Println("食指")
-case 3:
-fmt.Println("中指")
-case 4:
-fmt.Println("无名指")
-case 5:
-fmt.Println("小拇指")
-default:
-fmt.Println("无效的输入！")
-}
+    finger := 3
+    switch finger {
+    case 1:
+        fmt.Println("大拇指")
+    case 2:
+        fmt.Println("食指")
+    case 3:
+		fmt.Println("中指")
+    case 4:
+		fmt.Println("无名指")
+    case 5:
+		fmt.Println("小拇指")
+    default:
+        fmt.Println("无效的输入！")
+    }
 }
 ```
 
@@ -139,14 +139,14 @@ Go语言规定每个 `switch` 只能有一个 `default` 分支。
 
 ```go
 func testSwitch3() {
-switch n := 7; n {
-case 1, 3, 5, 7, 9:
-fmt.Println("奇数")
-case 2, 4, 6, 8:
-fmt.Println("偶数")
-default:
-fmt.Println(n)
-}
+    switch n := 7; n {
+    case 1, 3, 5, 7, 9:
+        fmt.Println("奇数")
+    case 2, 4, 6, 8:
+        fmt.Println("偶数")
+    default:
+        fmt.Println(n)
+    }
 }
 ```
 
@@ -154,41 +154,36 @@ fmt.Println(n)
 
 ```go
 func switchDemo4() {
-age := 30
-switch {
-case age < 25:
-fmt.Println("好好学习吧")
-case age > 25 && age < 35:
-fmt.Println("好好工作吧")
-case age > 60:
-fmt.Println("好好享受吧")
-default:
-fmt.Println("活着真好")
-}
+    age := 30
+    switch {
+    case age < 25:
+        fmt.Println("好好学习吧")
+    case age > 25 && age < 35:
+        fmt.Println("好好工作吧")
+    case age > 60:
+        fmt.Println("好好享受吧")
+    default:
+        fmt.Println("活着真好")
+    }
 }
 ```
 `fallthrough` 语法可以执行满足条件的 `case` 的下一个 `case`, 是为了兼容C语言中的 `case` 设计的。
 
 ```go
 func switchDemo5() {
-s := "a"
-switch {
-case s == "a":
-fmt.Println("a")
-fallthrough
-case s == "b":
-fmt.Println("b")
-case s == "c":
-fmt.Println("c")
-default:
-fmt.Println("...")
+    s := "a"
+    switch {
+    case s == "a":
+        fmt.Println("a")
+    fallthrough
+    case s == "b":
+        fmt.Println("b")
+    case s == "c":
+        fmt.Println("c")
+    default:
+        fmt.Println("...")
+    }
 }
-}
-```
-输出：
-```shell
-a
-b
 ```
 
 ## 5. goto(跳转到指定标签)
@@ -197,38 +192,38 @@ b
 func gotoDemo1() {
 var breakFlag bool
 for i := 0; i < 10; i++ {
-for j := 0; j < 10; j++ {
-if j == 2 {
-// 设置退出标签
-breakFlag = true
-break
-}
-fmt.Printf("%v-%v\n", i, j)
-}
-// 外层for循环判断
-if breakFlag {
-break
-}
-}
+    for j := 0; j < 10; j++ {
+        if j == 2 {
+        // 设置退出标签
+            breakFlag = true
+            break
+        }
+    fmt.Printf("%v-%v\n", i, j)
+    }
+    // 外层for循环判断
+    if breakFlag {
+        break
+    }
+    }
 }
 ```
 
 使用 `goto` 语句能简化代码：
 ```go
 func gotoDemo2() {
-for i := 0; i < 10; i++ {
-for j := 0; j < 10; j++ {
-if j == 2 {
-// 设置退出标签
-goto breakTag
-}
-fmt.Printf("%v-%v\n", i, j)
-}
-}
-return
-// 标签
-breakTag:
-fmt.Println("结束for循环")
+    for i := 0; i < 10; i++ {
+        for j := 0; j < 10; j++ {
+            if j == 2 {
+                // 设置退出标签
+                goto breakTag
+            }
+            fmt.Printf("%v-%v\n", i, j)
+        }
+    }
+    return
+    // 标签
+    breakTag:
+    fmt.Println("结束for循环")
 }
 ```
 
@@ -240,15 +235,15 @@ fmt.Println("结束for循环")
 ```go
 func breakDemo1() {
 BREAKDEMO1:
-for i := 0; i < 10; i++ {
-for j := 0; j < 10; j++ {
-if j == 2 {
-break BREAKDEMO1
-}
-fmt.Printf("%v-%v\n", i, j)
-}
-}
-fmt.Println("...")
+    for i := 0; i < 10; i++ {
+        for j := 0; j < 10; j++ {
+            if j == 2 {
+                break BREAKDEMO1
+            }
+        fmt.Printf("%v-%v\n", i, j)
+        }
+    }
+    fmt.Println("...")
 }
 ```
 
@@ -259,16 +254,16 @@ fmt.Println("...")
 
 ```go
 func continueDemo() {
-forloop1:
-for i := 0; i < 5; i++ {
-// forloop2:
-for j := 0; j < 5; j++ {
-if i == 2 && j == 2 {
-continue forloop1
-}
-fmt.Printf("%v-%v\n", i, j)
-}
-}
+    forloop1:
+    for i := 0; i < 5; i++ {
+        // forloop2:
+        for j := 0; j < 5; j++ {
+            if i == 2 && j == 2 {
+                continue forloop1
+            }
+        fmt.Printf("%v-%v\n", i, j)
+        }
+    }
 }
 ```
 
