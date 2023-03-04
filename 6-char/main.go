@@ -4,7 +4,7 @@ import "fmt"
 
 // 字符 byte & rune
 func main() {
-	// byte uint8 别名 ADCII 码
+	// byte uint8 别名 , ADCII 码
 	// rune int32 别名
 
 	var c1 byte = 'c'
