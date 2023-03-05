@@ -69,16 +69,16 @@ func main() {
 
 ```go
 func main() {
-    a := [5]int{1, 2, 3, 4, 5}
-    s := a[1:3]  // s := a[low:high]
-    fmt.Printf("s:%v len(s):%v cap(s):%v\n", s, len(s), cap(s))
+a := [5]int{1, 2, 3, 4, 5}
+s := a[1:3] // s := a[low:high]
+fmt.Printf("s = %v , s type = %T ,len(s): %v cap(s): %v \n", s, s, len(s), cap(s))
 }
 ```
 
 输出：
 
 ```go
-s:[2 3] len(s):2 cap(s):4
+s = [2 3] , s type = []int ,len(s): 2 cap(s): 4
 ```
 
 为了方便起见,可以省略切片表达式中的任何索引.省略了 `low` 则默认为0；省略了 `high` 则默认为切片操作数的长度:
