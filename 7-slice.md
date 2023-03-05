@@ -167,10 +167,10 @@ func main() {
 
 举个例子,现在有一个数组 `a := [8]int{0, 1, 2, 3, 4, 5, 6, 7}`,切片 `s1 := a[:5]` , 相应示意图如下. 
 
-![img.png](slice_1.png)
+![img.png](Images/slice_1.png)
 
 切片 `s2 := a[3:6]` , 相应示意图如下：
-![img.png](slice_2.png)
+![img.png](Images/slice_2.png)
 
 #### 1.1.5 判断切片是否为空
 要检查切片是否为空,请始终使用 `len(s) == 0` 来判断,而不应该使用 `s == nil` 来判断.
