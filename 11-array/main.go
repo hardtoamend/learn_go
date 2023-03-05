@@ -74,6 +74,8 @@ func main() {
 	//fmt.Println(x)
 
 	//// 1.求数组[1, 3, 5, 7, 8]所有元素的和
+
+	//// 1.1 方法1
 	//var sumarray = []int{1, 3, 5, 7, 8}
 	//var sum int
 	//for i := 0; i < len(sumarray); i++ {
@@ -82,15 +84,30 @@ func main() {
 	//}
 	//fmt.Println(sum)
 
+	//// 1.2 方法2
+	//for _, value := range sumarray {
+	//	sum = sum + value
+	//}
+	//fmt.Println(sum)
+
 	// 2. 找出数组中和为指定值的两个元素的下标，比如从数组[1, 3, 5, 7, 8]中找出和为8的两个元素的下标分别为(0,3)和(1,2)
 	var sumarray = []int{1, 3, 5, 7, 8}
-	for i := 0; i < len(sumarray); i++ {
-		for j := 0; j < len(sumarray); j++ {
-			if sumarray[i]+sumarray[j] == 8 {
-				fmt.Printf("和为 8 的两个元素的下标为 (%d,%d) \n", i, j)
+	//for i := 0; i < len(sumarray); i++ {
+	//	for j := 0; j < len(sumarray); j++ {
+	//		if sumarray[i]+sumarray[j] == 8 {
+	//			fmt.Printf("和为 8 的两个元素的下标为 (%d,%d) \n", i, j)
+	//		}
+	//	}
+	//}
+
+	for indexv1, valuev1 := range sumarray {
+		for indexv2, valuev2 := range sumarray {
+			if valuev1+valuev2 == 8 {
+				fmt.Printf("和为 8 的两个元素的下标为 (%d,%d) \n", indexv1, indexv2)
 			}
 		}
 	}
+
 }
 
 ////8. 数组是值类型
