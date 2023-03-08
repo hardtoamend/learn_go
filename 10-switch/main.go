@@ -27,7 +27,7 @@ func main() {
 	//	fmt.Println("偶数")
 	//}
 
-	//// 3. case 中使用biaodashi
+	//// 3. case 中使用表达式
 	//age := 30
 	//switch {
 	//case age > 18:
@@ -69,4 +69,10 @@ func main() {
 	//	// 标签
 	//breakTag:
 	//	fmt.Println("结束for循环")
+
+	//小结:
+	// 1. case 基本使用
+	// 2. case 一次判断多个
+	// 3. case 中使用表达式
+	// 4. goto 跳转到指定标签 for 循环嵌套
 }
