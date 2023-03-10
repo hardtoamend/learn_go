@@ -22,6 +22,7 @@ func main() {
 	//fmt.Println(boolArray)
 	//
 	//// 3. 使用索引值方式初始化
+	////    [...] 表示数组长度不确定，可以根据需要动态分配。这种语法也称为 数组切片（array slice)
 	//var langArray = [...]string{1: "Golang", 3: "Python", 7: "Java"}
 	//fmt.Println(langArray)
 	//fmt.Printf("langArray Type : %T \n", langArray)
@@ -114,3 +115,18 @@ func main() {
 //func f1(a [3][2]int) {
 //	a[0][1] = 100
 //}
+
+//小结:
+//1.  定义时使用初始值列表的方式初始化
+//2. 编译器推导数组长度
+//3. 使用索引值方式初始化
+//4. 数组的遍历
+//5. for range 遍历
+//	获取 Array index 索引
+//	获取 Array value 值
+//6. 二维数组
+//7. 二维数组遍历
+//8. 数组是值类型
+//
+//1.求数组[1, 3, 5, 7, 8]所有元素的和
+//2. 找出数组中和为指定值的两个元素的下标，比如从数组[1, 3, 5, 7, 8]中找出和为8的两个元素的下标分别为(0,3)和(1,2)
